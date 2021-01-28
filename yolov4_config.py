@@ -21,5 +21,11 @@ channels=3
 momentum=0.949
 decay=0.0005
 learning_rate=0.001
-steps= (6400,7200)
+steps=(6400,7200)
 scales=(0.1,0.1)
+
+with open("data/classes.names") as f:
+  lines = [l for l in f.readlines() if len(l) > 2 ]
+  classes = len(lines)
+  max_batches = 2000*classes
+  steps = (int(0.8*max_batches), int(0.9*max_batches))
