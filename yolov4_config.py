@@ -29,3 +29,8 @@ with open("data/classes.names") as f:
   classes = len(lines)
   max_batches = 2000*classes
   steps = (int(0.8*max_batches), int(0.9*max_batches))
+
+  print("Parameters changed :")
+  print("classes : %d" % classes)
+  print("max_batches : %d" % max_batches)
+  print("steps : (%d,%d)" % steps)
