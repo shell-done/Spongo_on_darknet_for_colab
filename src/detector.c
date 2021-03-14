@@ -306,8 +306,8 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
             printf("\n (next mAP calculation at %d iterations) ", next_map_calc);
             if (mean_average_precision > 0) printf("\n Last accuracy mAP@0.5 = %2.2f %%, best = %2.2f %% ", mean_average_precision * 100, best_map * 100);
             
-            FILE* mapfile = fopen("maps.txt", "a");
-            fprintf(mapfile, "Iteration %d : Last accuracy mAP@0.5 = %2.2f %%, best = %2.2f %% ", iteration, mean_average_precision * 100, best_map * 100);
+            FILE* mapfile = fopen("backup/maps.txt", "a");
+            fprintf(mapfile, "Iteration %d : Last accuracy mAP@0.5 = %2.2f %%, best = %2.2f %% \n", iteration, mean_average_precision * 100, best_map * 100);
             fclose(mapfile);
         }
 
